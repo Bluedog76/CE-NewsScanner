@@ -1,0 +1,19 @@
+{
+  "name": "ce-newsscanner",
+  "version": "0.0.5",
+  "description": "A news scanner for current events.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bluedog76/CE-NewsScanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluedog76/CE-NewsScanner/issues"
+  },
+  "homepage": "https://github.com/Bluedog76/CE-NewsScanner#readme"
+}
