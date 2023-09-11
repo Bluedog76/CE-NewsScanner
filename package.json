@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Bluedog76/CE-NewsScanner/issues"
   },
-  "homepage": "https://github.com/Bluedog76/CE-NewsScanner#readme"
+  "homepage": "https://github.com/Bluedog76/CE-NewsScanner#readme",
+  "dependencies": {
+    "newsapi": "^2.4.1"
+  }
 }
