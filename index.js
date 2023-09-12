@@ -1,14 +1,20 @@
 const NewsAPI = require('newsapi');
-var fs = require("fs");
+var fs = require('fs');
 const newsapi = new NewsAPI('63dec177fea0436286a192ae49bb5ef1');
+var configdecript
 // file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function readConfig() {
-fs.readFile("config.txt", "utf-8", (err, data) => {
-  if (err) { console.log(err) }
-  return data
+  fs.readFile('config.txt', 'utf8', (err, data) => {
+  if (err) { 
+    console.log(err) 
+    return
+  }
+  console.log(data);
+  return data;
 })};
 
 var configdecript = readConfig()
+
 if (configdecript == 1) {
   console.log("true", configdecript);
 } else {
