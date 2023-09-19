@@ -1,23 +1,35 @@
 const NewsAPI = require('newsapi');
-var fs = require('fs');
+const fs = require('fs')
 const newsapi = new NewsAPI('63dec177fea0436286a192ae49bb5ef1');
-var configdecript
 // file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
-function readConfig() {
-  fs.readFile('config.txt', 'utf8', (err, data) => {
-  if (err) { 
-    console.log(err) 
-    return
-  }
-  console.log(data);
-  return data;
-})};
+function GetDate() {
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+  var today = mm + '/' + dd + '/' + yyyy;
+  return today;
+}
 
-var configdecript = readConfig()
+function GetConfig() {
+  var fun = fs.readFileSync("config.txt", "utf-8", (err, data) => {
+    if (err) throw err;
+    console.log(data);
+    return data;
+  })
+  return fun;
+}
+//^I dont know how the fuck this is working so dont fucking touch it.
+
+var Today = GetDate()
+var configdecript = GetConfig()
+
+console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today)
+console.log("Loading...")
 
 if (configdecript == 1) {
   console.log("true", configdecript);
-} else {
+  } else {
   console.log("false", configdecript);
 }
 
