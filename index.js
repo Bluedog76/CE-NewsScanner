@@ -33,17 +33,21 @@ function GetAscii() {
 var Today = GetDate()
 var configdecript = GetConfig()
 var asciihusky = GetAscii()
+console.log(asciihusky);
 console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today);
 console.log("Loading...");
-console.log(asciihusky);
 
+
+
+
+/*
 if (configdecript == 1) {
   console.log("true", configdecript);
   } else {
   console.log("false", configdecript);
 }
 
-
+*/
 
 // https://newsapi.org/docs/client-libraries/node-js
 // You need atleast one filter
