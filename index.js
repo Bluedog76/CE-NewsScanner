@@ -1,5 +1,6 @@
 const NewsAPI = require('newsapi');
-const fs = require('fs')
+const fs = require('fs');
+const { Console } = require('console');
 const newsapi = new NewsAPI('63dec177fea0436286a192ae49bb5ef1');
 // file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function GetDate() {
@@ -10,7 +11,6 @@ function GetDate() {
   var today = mm + '/' + dd + '/' + yyyy;
   return today;
 }
-
 function GetConfig() {
   var fun = fs.readFileSync("config.txt", "utf-8", (err, data) => {
     if (err) throw err;
@@ -19,13 +19,23 @@ function GetConfig() {
   })
   return fun;
 }
-//^I dont know how the fuck this is working so dont fucking touch it.
+function GetAscii() {
+  var fun = fs.readFileSync("./ExtraFiles/ascii_husky_small.txt", "utf-8", (err, data) => {
+    if (err) throw err;
+    console.log(data);
+    return data;
+  })
+  return fun;
+}
 
+
+//^I dont know how the fuck this is working so dont fucking touch it.
 var Today = GetDate()
 var configdecript = GetConfig()
-
-console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today)
-console.log("Loading...")
+var asciihusky = GetAscii()
+console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today);
+console.log("Loading...");
+console.log(asciihusky);
 
 if (configdecript == 1) {
   console.log("true", configdecript);
