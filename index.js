@@ -1,7 +1,16 @@
-const NewsAPI = require('newsapi');
+require('dotenv').config();
+const Token = process.env.TOKEN;
+console.log("Loaded Config & Set");
+
 const fs = require('fs');
 const { Console } = require('console');
-const newsapi = new NewsAPI('63dec177fea0436286a192ae49bb5ef1');
+
+console.log("If theres an error TOKEN not set");
+const NewsAPI = require('newsapi');
+const newsapi = new NewsAPI(Token);
+
+
+
 // file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function GetDate() {
   var today = new Date();
