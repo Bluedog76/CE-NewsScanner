@@ -1,17 +1,19 @@
+//dotenv (Hide tokens)
 require('dotenv').config();
 const Token = process.env.TOKEN;
 console.log("Loaded Config & Set");
 
+//promting
+const prompt = require('prompt-sync')()
+//file system
 const fs = require('fs');
 const { Console } = require('console');
-
+//load NewAPI
 console.log("If theres an error TOKEN not set");
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI(Token);
 
 
-
-// file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function GetDate() {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -20,6 +22,7 @@ function GetDate() {
   var today = mm + '/' + dd + '/' + yyyy;
   return today;
 }
+// file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function GetConfig() {
   var fun = fs.readFileSync("config.txt", "utf-8", (err, data) => {
     if (err) throw err;
@@ -27,6 +30,7 @@ function GetConfig() {
     return data;
   })
   return fun;
+
 }
 function GetAscii() {
   var fun = fs.readFileSync("./ExtraFiles/ascii_husky_small.txt", "utf-8", (err, data) => {
@@ -46,6 +50,26 @@ console.log(asciihusky);
 console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today);
 console.log("Loading...");
 
+//get preset
+function Preset() {
+  var answer = prompt("What Preset Would you like to Chose")
+  console.log(Preset1)
+  console.log(Preset2)
+  console.log(Preset3)
+  console.log(Preset4)
+
+  if (answer == 1) then
+    console.log("1");
+  else if(answer == 2) then
+    console.log("2");
+
+  else if (answer == 3) then
+    console.log("3");
+  else if (answer == 4) then
+    console.log("4");
+  else 
+    Preset()
+} 
 
 
 
