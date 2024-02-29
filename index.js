@@ -7,7 +7,6 @@ console.log("Loaded Config & Set");
 const prompt = require('prompt-sync')()
 //file system
 const fs = require('fs');
-const { Console } = require('console');
 //load NewAPI
 console.log("If theres an error TOKEN not set");
 const NewsAPI = require('newsapi');
@@ -50,27 +49,35 @@ console.log(asciihusky);
 console.log("Succesfully loaded Functions, Packages, and Config on the "+ Today);
 console.log("Loading...");
 
+console.log("What Preset Would you like to Chose")
+console.log("Preset1")
+console.log("Preset2")
+console.log("Preset3")
+console.log("Preset4") 
+
+
 //get preset
 function Preset() {
-  var answer = prompt("What Preset Would you like to Chose")
-  console.log(Preset1)
-  console.log(Preset2)
-  console.log(Preset3)
-  console.log(Preset4)
+  var answer = prompt("> ")
 
-  if (answer == 1) then
+  if (answer == 1) {
     console.log("1");
-  else if(answer == 2) then
+    var passed = true;
+  } else if(answer == 2) {
     console.log("2");
-
-  else if (answer == 3) then
+    var passed = true;
+  }else if (answer == 3) {
     console.log("3");
-  else if (answer == 4) then
-    console.log("4");
-  else 
-    Preset()
+    var passed = true;
+  }else if (answer == 4) {
+    console.log("4"); 
+    var passed = true;
+  }else if (passed == true) {
+    console.log("fail");
+    Preset();
+  }
 } 
-
+Preset();
 
 
 /*
