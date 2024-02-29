@@ -1,23 +1,26 @@
 //dotenv (Hide tokens)
 require('dotenv').config();
 const Token = process.env.TOKEN;
+if (Token == undefined) {
+  console.log("SAFE ABORT")
+  console.log("There is no active tooken set in the .env config file. Please add a token...")
+  process.exit();
+}
 console.log("Loaded Config & Set");
+
 
 //promting
 const prompt = require('prompt-sync')()
+
 //file system
 const fs = require('fs');
+
+
 //load NewAPI
-function newsapi(YourToken) {
-  const newsapi = new NewsAPI(Token);
-  if (err) throw console.log("No *TOKEN* Set In an .env");
-  return newsapi;
-}
-
-const newsapi(Token);
-
-//trying to stop the error stoping the code.
-
+const NewsAPI = require('newsapi');
+const { exit } = require('process');
+//const { exit } = require('process');
+const newsapi = new NewsAPI(Token);
 
 
 function GetDate() {
@@ -28,6 +31,8 @@ function GetDate() {
   var today = mm + '/' + dd + '/' + yyyy;
   return today;
 }
+
+
 // file system https://tutorialedge.net/nodejs/reading-writing-files-with-nodejs/
 function GetConfig() {
   var fun = fs.readFileSync("config.txt", "utf-8", (err, data) => {
@@ -36,15 +41,6 @@ function GetConfig() {
     return data;
   })
   return fun;
-
-function DAMIT(message, type) {
-  if (type == "undefined") {
-    console.log(message);
-  } else if (type == "err") {
-    console.error(message);
-  }
-}
-
 
 
 }
@@ -57,8 +53,12 @@ function GetAscii() {
   return fun;
 }
 
+function Getdata() {
+
+}
 
 //^I dont know how the fuck this is working so dont fucking touch it.
+
 var Today = GetDate()
 var configdecript = GetConfig()
 var asciihusky = GetAscii()
