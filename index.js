@@ -8,9 +8,16 @@ const prompt = require('prompt-sync')()
 //file system
 const fs = require('fs');
 //load NewAPI
-console.log("If theres an error TOKEN not set");
-const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI(Token);
+function newsapi(YourToken) {
+  const newsapi = new NewsAPI(Token);
+  if (err) throw console.log("No *TOKEN* Set In an .env");
+  return newsapi;
+}
+
+const newsapi(Token);
+
+//trying to stop the error stoping the code.
+
 
 
 function GetDate() {
@@ -29,6 +36,16 @@ function GetConfig() {
     return data;
   })
   return fun;
+
+function DAMIT(message, type) {
+  if (type == "undefined") {
+    console.log(message);
+  } else if (type == "err") {
+    console.error(message);
+  }
+}
+
+
 
 }
 function GetAscii() {
@@ -59,25 +76,30 @@ console.log("Preset4")
 //get preset
 function Preset() {
   var answer = prompt("> ")
+  var passed = 0;
 
   if (answer == 1) {
-    console.log("1");
-    var passed = true;
+    var passed = 1;
   } else if(answer == 2) {
-    console.log("2");
-    var passed = true;
+    var passed = 1; 
   }else if (answer == 3) {
-    console.log("3");
-    var passed = true;
+    var passed = 1;
   }else if (answer == 4) {
-    console.log("4"); 
-    var passed = true;
-  }else if (passed == true) {
-    console.log("fail");
-    Preset();
+    var passed = 1;
+  }else if (passed == 0) {
+    console.log("Incrorrect, Please state a number in the range of 1-4");
+    var answer = Preset();
   }
+  return answer;
 } 
 Preset();
+
+
+
+
+
+
+
 
 
 /*
